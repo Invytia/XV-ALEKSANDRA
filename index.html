@@ -521,7 +521,7 @@
 
             <div class="bloque-vidrio-alt anim-element anim-fade-up">
                 <div class="section-heading anim-element anim-zoom-in">Código de Vestimenta</div>
-                <div class="anim-element anim-fade-up" style="font-family:'Cinzel',serif;font-size:24px;font-weight:600;letter-spacing:6px;color:var(--text-gold);margin-top:10px;transition-delay: 0.2s;">Botas y Sombrero</div>
+                <div class="anim-element anim-fade-up" style="font-family:'Cinzel',serif;font-size:24px;font-weight:600;letter-spacing:6px;color:var(--text-gold);margin-top:10px;transition-delay: 0.2s;">Botas y Sombrero. Los colores verde esmeralda y dorado están reservados para la quinceañera.</div>
             </div>
 
             <div class="divider-ornate anim-element anim-fade-up"><div class="divider-ornate-diamond"></div></div>
@@ -770,7 +770,7 @@
             const inp = document.getElementById('guest-name');
             if(!inp || !inp.value.trim()){alert('Por favor ingresa tu nombre completo.'); inp.focus(); return;}
             const msg = `¡Hola! Confirmo mi asistencia a los XV Años de Aleksandra Andrade.\n\n• Nombre: ${inp.value.trim()}`;
-            window.open(`https://wa.me/525568979918?text=${encodeURIComponent(msg)}`,'_blank');
+            window.open(`https://wa.me/525574892285?text=${encodeURIComponent(msg)}`,'_blank');
         }
 
         function sendWishViaWhatsApp(e){
@@ -779,7 +779,7 @@
             const mensaje = document.getElementById('wish-mensaje').value.trim();
             if(!nombre || !mensaje){ alert('Por favor llena ambos campos.'); return; }
             const text = `¡Hola! Dejo mis mejores deseos para Aleksandra:\n\n"${mensaje}"\n\n- ${nombre}`;
-            window.open(`https://wa.me/525568979918?text=${encodeURIComponent(text)}`, '_blank');
+            window.open(`https://wa.me/525574892285?text=${encodeURIComponent(text)}`, '_blank');
             document.getElementById('wish-form').reset();
         }
 
