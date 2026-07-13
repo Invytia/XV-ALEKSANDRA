@@ -218,7 +218,14 @@
         .bloque-vidrio p, .bloque-vidrio-alt p { color: rgba(255,255,255,0.95); font-size: 18px; }
 
         /* ====== CALENDARIO VIDRIO ====== */
-        .calendar-widget{ margin-top:18px; background:rgba(255,255,255,0.15); border:1px solid rgba(212,175,55,0.3); border-radius:18px; overflow:hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+      .calendar-widget {
+    margin-top: 18px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 18px;
+    overflow: hidden;
+    width: 100%;
+}
         .calendar-header{ padding:18px 20px 14px; text-align:center; color: #fff; position:relative; }
         .calendar-header::after{ content:''; position:absolute; left:0; bottom:0; width:100%; height:1px; background:rgba(212,175,55,0.3); }
         .calendar-year{ font-family:'Cinzel',serif; font-size:10px; letter-spacing:5px; text-transform:uppercase; color: var(--text-gold); font-weight: 600; }
@@ -226,8 +233,21 @@
         .calendar-body{ padding:18px 16px 20px; }
         .calendar-days-header{ display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:12px; }
         .calendar-day-name{ text-align:center; font-family:'Montserrat', sans-serif; font-size:9px; letter-spacing:1.5px; color:var(--text-gold); text-transform:uppercase; font-weight: 600; }
-        .calendar-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:8px; }
-        .cal-day{ width:34px; height:34px; margin:auto; display:flex; align-items:center; justify-content:center; font-family: 'Cormorant Garamond', serif; font-size:18px; color:#fff; border-radius:50%; transition:all .3s ease; }
+        .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px; /* Reduje el gap para ahorrar espacio lateral */
+}
+        .cal-day {
+    aspect-ratio: 1 / 1; /* Esto hace que el cuadrado sea perfecto independientemente del ancho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; /* Ajustado ligeramente para evitar desbordamiento */
+    color: #fff;
+    border-radius: 50%;
+}
         .cal-day.empty{ opacity:0; }
         .cal-day.highlight{ border: 1.5px solid var(--text-gold); color:var(--text-gold); font-weight:600; background: rgba(212,175,55,0.15); box-shadow: 0 0 10px rgba(212,175,55,0.3); }
 
@@ -472,21 +492,24 @@
                 <div class="anim-element anim-fade-up" style="font-family:'Cinzel',serif;font-size:28px;font-weight:600;color:var(--text-gold);letter-spacing:3px;transition-delay: 0.2s;">14 · NOV · 2026</div>
                 <div class="anim-element anim-fade-up" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#fff;margin-top:5px; opacity:0.95;transition-delay: 0.3s;">Sábado</div>
                 
-                <div class="calendar-widget anim-element anim-zoom-in" style="transition-delay: 0.4s;">
-                    <div class="calendar-header">2026 <div class="calendar-month">Noviembre</div></div>
-                    <div class="calendar-body">
-                        <div class="calendar-days-header">
-                            <span class="calendar-day-name">Dom</span><span class="calendar-day-name">Lun</span><span class="calendar-day-name">Mar</span><span class="calendar-day-name">Mié</span><span class="calendar-day-name">Jue</span><span class="calendar-day-name">Vie</span><span class="calendar-day-name">Sáb</span>
-                        </div>
-                        <div class="calendar-grid">
-                            <span class="cal-day">1</span><span class="cal-day">2</span><span class="cal-day">3</span><span class="cal-day">4</span><span class="cal-day">5</span><span class="cal-day">6</span><span class="cal-day">7</span>
-                            <span class="cal-day">8</span><span class="cal-day">9</span><span class="cal-day">10</span><span class="cal-day">11</span><span class="cal-day">12</span><span class="cal-day">13</span><span class="cal-day highlight">14</span>
-                            <span class="cal-day">15</span><span class="cal-day">16</span><span class="cal-day">17</span><span class="cal-day">18</span><span class="cal-day">19</span><span class="cal-day">20</span><span class="cal-day">21</span>
-                            <span class="cal-day">22</span><span class="cal-day">23</span><span class="cal-day">24</span><span class="cal-day">25</span><span class="cal-day">26</span><span class="cal-day">27</span><span class="cal-day">28</span>
-                            <span class="cal-day">29</span><span class="cal-day">30</span><span class="cal-day empty"></span><span class="cal-day empty"></span><span class="cal-day empty"></span><span class="cal-day empty"></span><span class="cal-day empty"></span>
-                        </div>
-                    </div>
-                </div>
+              <div class="calendar-widget anim-element anim-zoom-in" style="transition-delay: 0.4s; padding-bottom: 10px;">
+    <div class="calendar-header">
+        <div class="calendar-year">2026</div>
+        <div class="calendar-month">Noviembre</div>
+    </div>
+    <div class="calendar-body">
+        <div class="calendar-days-header">
+            <span class="calendar-day-name">Dom</span><span class="calendar-day-name">Lun</span><span class="calendar-day-name">Mar</span><span class="calendar-day-name">Mié</span><span class="calendar-day-name">Jue</span><span class="calendar-day-name">Vie</span><span class="calendar-day-name">Sáb</span>
+        </div>
+        <div class="calendar-grid">
+            <span class="cal-day">1</span><span class="cal-day">2</span><span class="cal-day">3</span><span class="cal-day">4</span><span class="cal-day">5</span><span class="cal-day">6</span><span class="cal-day">7</span>
+            <span class="cal-day">8</span><span class="cal-day">9</span><span class="cal-day">10</span><span class="cal-day">11</span><span class="cal-day">12</span><span class="cal-day">13</span><span class="cal-day highlight">14</span>
+            <span class="cal-day">15</span><span class="cal-day">16</span><span class="cal-day">17</span><span class="cal-day">18</span><span class="cal-day">19</span><span class="cal-day">20</span><span class="cal-day">21</span>
+            <span class="cal-day">22</span><span class="cal-day">23</span><span class="cal-day">24</span><span class="cal-day">25</span><span class="cal-day">26</span><span class="cal-day">27</span><span class="cal-day">28</span>
+            <span class="cal-day">29</span><span class="cal-day">30</span><span class="cal-day empty"></span><span class="cal-day empty"></span><span class="cal-day empty"></span><span class="cal-day empty"></span><span class="cal-day empty"></span>
+        </div>
+    </div>
+</div>
                 <button class="btn-calendario anim-element anim-fade-up" style="transition-delay: 0.5s;" onclick="addToCalendar()">
                     <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.89 3 3 3.9 3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V9h14v10zm0-12H5V5h14v2zM7 11h5v5H7z"/></svg>
                     Agregar a mi Calendario
